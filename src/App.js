@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+const arrayOfObjects = [ { name: 'John', age: 23 },
+ { name: 'Albert', age: 28 }, 
+ { name: 'Gladly', age: 35 } ]
 
-function App() {
+function Component() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <table>
+      <ul>
+        <li>
+          {arrayOfObjects.map(({ name, age }) => (
+          <p key={name}> {name} {age} </p>
+         ))}
+      </li>
+      </ul>
+    </table>
   );
 }
-
-export default App;
+export default Component;
